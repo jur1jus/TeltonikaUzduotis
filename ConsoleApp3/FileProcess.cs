@@ -49,8 +49,9 @@ namespace ConsoleApp3
 				if (line.StartsWith(_dataStartReadingFlag)) {
 					continue;
 				}
-				//File.AppendAllText(AppDomain.CurrentDomain.BaseDirectory + "asd.txt", line + Environment.NewLine);
+
 				var lineItems = line.Split(',');
+
 				dataFromFile = new Data() {
 					Band = lineItems[0],
 					PCL = int.Parse(lineItems[1]),
@@ -60,8 +61,8 @@ namespace ConsoleApp3
 					MaxPower = float.Parse(lineItems[5], CultureInfo.InvariantCulture),
 					CheckResult = Helpers.ParseBool(lineItems[6].Trim())
 				};
-				Data.Add(dataFromFile);
 
+				Data.Add(dataFromFile);
 			}
 		}
 	}
